@@ -4,7 +4,7 @@
 #
 Name     : R-betareg
 Version  : 3.1.0
-Release  : 2
+Release  : 3
 URL      : https://cran.r-project.org/src/contrib/betareg_3.1-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/betareg_3.1-0.tar.gz
 Summary  : Beta Regression
@@ -15,13 +15,11 @@ Requires: R-flexmix
 Requires: R-modeltools
 Requires: R-partykit
 Requires: R-sandwich
-Requires: R-strucchange
 BuildRequires : R-Formula
 BuildRequires : R-flexmix
 BuildRequires : R-modeltools
 BuildRequires : R-partykit
 BuildRequires : R-sandwich
-BuildRequires : R-strucchange
 BuildRequires : clr-R-helpers
 
 %description
@@ -37,11 +35,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521225402
+export SOURCE_DATE_EPOCH=1523290578
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521225402
+export SOURCE_DATE_EPOCH=1523290578
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
