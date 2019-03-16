@@ -4,16 +4,12 @@
 #
 Name     : R-betareg
 Version  : 3.1.1
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/betareg_3.1-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/betareg_3.1-1.tar.gz
 Summary  : Beta Regression
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
-Requires: R-flexmix
-Requires: R-modeltools
-Requires: R-partykit
-Requires: R-sandwich
 BuildRequires : R-flexmix
 BuildRequires : R-modeltools
 BuildRequires : R-partykit
@@ -33,11 +29,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1538171194
+export SOURCE_DATE_EPOCH=1552717665
 
 %install
+export SOURCE_DATE_EPOCH=1552717665
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1538171194
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -72,8 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library betareg|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  betareg || :
 
 
 %files
@@ -118,3 +113,10 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/betareg/help/paths.rds
 /usr/lib64/R/library/betareg/html/00Index.html
 /usr/lib64/R/library/betareg/html/R.css
+/usr/lib64/R/library/betareg/tests/Examples/betareg-Ex.Rout.save
+/usr/lib64/R/library/betareg/tests/betamix.R
+/usr/lib64/R/library/betareg/tests/betamix.Rout.save
+/usr/lib64/R/library/betareg/tests/betatree.R
+/usr/lib64/R/library/betareg/tests/betatree.Rout.save
+/usr/lib64/R/library/betareg/tests/bias.R
+/usr/lib64/R/library/betareg/tests/bias.Rout.save
