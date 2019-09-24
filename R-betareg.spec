@@ -4,24 +4,22 @@
 #
 Name     : R-betareg
 Version  : 3.1.2
-Release  : 23
+Release  : 24
 URL      : https://cran.r-project.org/src/contrib/betareg_3.1-2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/betareg_3.1-2.tar.gz
 Summary  : Beta Regression
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
+Requires: R-Formula
 Requires: R-flexmix
-Requires: R-inum
-Requires: R-libcoin
+Requires: R-lmtest
 Requires: R-modeltools
-Requires: R-mvtnorm
 Requires: R-partykit
 Requires: R-sandwich
+BuildRequires : R-Formula
 BuildRequires : R-flexmix
-BuildRequires : R-inum
-BuildRequires : R-libcoin
+BuildRequires : R-lmtest
 BuildRequires : R-modeltools
-BuildRequires : R-mvtnorm
 BuildRequires : R-partykit
 BuildRequires : R-sandwich
 BuildRequires : buildreq-R
@@ -38,13 +36,13 @@ In addition to maximum likelihood regression (for both mean and precision of a b
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1558057655
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1569285183
 
 %install
-export SOURCE_DATE_EPOCH=1558057655
+export SOURCE_DATE_EPOCH=1569285183
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -73,7 +71,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
