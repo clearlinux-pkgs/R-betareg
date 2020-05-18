@@ -4,7 +4,7 @@
 #
 Name     : R-betareg
 Version  : 3.1.3
-Release  : 29
+Release  : 30
 URL      : https://cran.r-project.org/src/contrib/betareg_3.1-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/betareg_3.1-3.tar.gz
 Summary  : Beta Regression
@@ -33,21 +33,22 @@ In addition to maximum likelihood regression (for both mean and precision of a b
 
 %prep
 %setup -q -c -n betareg
+cd %{_builddir}/betareg
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1580749225
+export SOURCE_DATE_EPOCH=1589778498
 
 %install
-export SOURCE_DATE_EPOCH=1580749225
+export SOURCE_DATE_EPOCH=1589778498
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
