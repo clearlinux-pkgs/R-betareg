@@ -4,7 +4,7 @@
 #
 Name     : R-betareg
 Version  : 3.1.4
-Release  : 33
+Release  : 34
 URL      : https://cran.r-project.org/src/contrib/betareg_3.1-4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/betareg_3.1-4.tar.gz
 Summary  : Beta Regression
